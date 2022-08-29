@@ -1,0 +1,31 @@
+package Tareados;
+
+import java.util.ArrayList;
+
+public class ArregloADT{
+	
+	public static void main(String[] args) throws Exception {
+		
+		ArrayList<Integer> listaA = new ArrayList<Integer>();
+	
+	listaA.add(2);
+	listaA.add(7);
+	listaA.add(200);
+	listaA.add(23);
+	listaA.add(5);
+	
+	for(int i = 0; i < listaA.size(); i++) {
+		int elemento = listaA.get(i);
+		System.out.println(elemento);
+	}
+	
+	int getElemento = listaA.get(1);
+	System.out.println("elemento obtenido: "+ getElemento);
+	
+	int getLongitud = listaA.size();
+	System.out.println("la longitud del arreglo es de: "+listaA.size());
+	
+
+	}
+	
+}
