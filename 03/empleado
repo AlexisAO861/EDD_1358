@@ -1,0 +1,115 @@
+package Tareatres;
+
+public class Empleado {
+
+    private int numero_trabajador;
+    private String Nombres;
+    private String apellido_paterno;
+    private String apellido_materno;
+    private double horas_extras;
+    private int sueldo_base;
+    private int año_ingreso;
+    int Ant;
+    double prestacion;
+    double sueldo_nuevo;
+    double PagoHorasExtras;
+    private double Total;
+
+    public Empleado(int NT, String Nom, String pat, String mat, int he, int sb, int ai) {
+        this.numero_trabajador = NT;
+        this.Nombres = Nom;
+        this.apellido_paterno = pat;
+        this.apellido_materno = mat;
+        this.horas_extras  = he;
+        this.sueldo_base = sb;
+        this.año_ingreso = ai;
+    }
+
+    public int get_NumTrabajador() {
+        return this.numero_trabajador;
+    }
+
+    public void set_NumTrabajador(int NT) {
+        this.numero_trabajador = NT;
+    }
+
+    public String get_Nombres() {
+        return this.Nombres;
+    }
+
+    public void set_Nombres(String Nom) {
+        this.Nombres = Nom;
+    }
+
+    public String get_ApellidoP() {
+        return this.apellido_paterno;
+    }
+
+    public void set_ApellidoP(String Ap_P) {
+        this.apellido_paterno = Ap_P;
+    }
+
+    public String get_ApellidoM() {
+        return this.apellido_materno;
+    }
+
+    public void set_ApellidoM(String Ap_M) {
+        this.apellido_materno = Ap_M;
+    }
+
+    public double get_HorasExtra() {
+        return this.horas_extras;
+    }
+
+    public void set_HorasExtra(int H_E) {
+        this.horas_extras = H_E;
+    }
+
+    public int get_SueldoBase() {
+        return this.sueldo_base;
+    }
+
+    public void set_SueldoBase(int S_B) {
+        this.sueldo_base = S_B;
+    }
+
+    public int get_AñoIngreso() {
+        return this.año_ingreso;
+    }
+
+    public void set_AñoIngreso(int Año_Ing) {
+        this.año_ingreso = Año_Ing;
+    }
+
+    public String to_String() { //Stan es estado en polaco.
+        String Stan = "";
+        Stan += numero_trabajador + "\n";
+        Stan += Nombres + "\n";
+        Stan += apellido_paterno + "\n";
+        Stan += apellido_materno + "\n";
+        Stan += horas_extras + "\n";
+        Stan += sueldo_base + "\n";
+        Stan += año_ingreso;
+        return Stan;
+    }
+    
+    // métodos de uso gral --> metodos que hacen cálculos: horas extra, etc.
+
+    public double CalcularSueldo() {
+        int Ant = 2022 - this.año_ingreso;
+        System.out.println(Ant);
+        Total = this.sueldo_base + (this.sueldo_base * (Ant * 0.03)) + this.horas_extras * horas_extras;
+        return Total;
+    }
+    public double SueldoConPrestacion() {
+    	int Ant = 2022 - this.año_ingreso;
+    	double prestacion = this.sueldo_base*(Ant*0.03);
+    	double sueldo_nuevo = this.sueldo_base + prestacion;
+    	return Total;
+    }
+    public double PagoHorasExtras() {
+    	double PagoHorasExtras = this.horas_extras * 276.5;
+    	return Total;
+    }
+    
+}
