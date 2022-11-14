@@ -1,0 +1,79 @@
+package Tareaocho;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ColaPrioridadAcotada<Integer> cola1 = new ColaPrioridadAcotada(1);
+		ColaPrioridadAcotada<Integer> cola2 = new ColaPrioridadAcotada(2);
+		ColaPrioridadAcotada<Integer> cola3 = new ColaPrioridadAcotada(3);
+		ColaPrioridadAcotada<Integer> cola4 = new ColaPrioridadAcotada(4);
+		ColaPrioridadAcotada<Integer> cola5 = new ColaPrioridadAcotada(5);
+		
+		System.out.println("Inicializacion de cola acotada con prioridad\n");
+		
+		cola4.enqueue(4, "Mecanico");
+		cola4.transversal();
+		System.out.println("========== Llegan el mecanico ==========\n");
+		
+		cola2.enqueue(2, "Niños");
+		cola2.transversal();
+		cola4.transversal();
+		System.out.println("========== Llegan los niños==========\n");
+		
+		cola4.enqueue(4, "Maestro");
+		cola2.transversal();
+		cola4.transversal();
+		System.out.println("========== Llega el maestro ==========\n");
+		
+		cola3.enqueue(3, "Mujeres");
+		cola2.transversal();
+		cola3.transversal();
+		cola4.transversal();
+		System.out.println("========== Llegan las mujeres==========\n");
+		
+		cola2.enqueue(2, "3ra edad");
+		cola2.transversal();
+		cola3.transversal();
+		cola4.transversal();
+		System.out.println("========== Llegan los de 3ra edad==========\n");
+		
+		cola1.enqueue(1, "Niñas");
+		cola1.transversal();
+		cola2.transversal();
+		cola3.transversal();
+		cola4.transversal();
+		System.out.println("========== Llegan las niñas ==========\n");
+		
+		cola3.enqueue(3, "Hombres");
+		cola1.transversal();
+		cola2.transversal();
+		cola3.transversal();
+		cola4.transversal();
+		System.out.println("========== Llegan los Hombres ==========\n");
+		
+		cola4.enqueue(4, "Vigia");
+		cola1.transversal();
+		cola2.transversal();
+		cola3.transversal();
+		cola4.transversal();
+		System.out.println("========== Llega el vigia ==========\n");
+		
+		cola5.enqueue(5, "Capitan");
+		cola1.transversal();
+		cola2.transversal();
+		cola3.transversal();
+		cola4.transversal();
+		cola5.transversal();
+		System.out.println("========== Llega el capitan ==========\n");
+		
+		cola4.enqueue(4, "Timonel");
+		cola1.transversal();
+		cola2.transversal();
+		cola3.transversal();
+		cola4.transversal();
+		cola5.transversal();
+		System.out.println("========== Llega el timonel ==========\n");
+
+	}
+}
