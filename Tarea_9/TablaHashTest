@@ -1,0 +1,23 @@
+package Tareanueve;
+
+public class TablaHashTest {
+
+    public static void main(String[] args) {
+        TablaHash<Integer, String> tabla = new TablaHash<>(13);
+        tabla.add(1, "Alexis");
+        tabla.add(5, "A");
+        tabla.add(1, "YULI");
+        tabla.add(3, "Ayala");
+        tabla.add(9, "G");
+        tabla.add(8, "O");
+        tabla.add(4, "Olmos");
+      
+        System.out.println("===============TABLA HASH===================");
+        System.out.println(tabla);
+        System.out.println("=============== Valor asociado a la llave 3===================");
+        System.out.println(tabla.valueOf(3));
+        System.out.println("=============== Elimina de la tabla el valor asociado a la llave 4 ===================");
+        tabla.remove(4);
+        System.out.println(tabla);
+    }
+}
