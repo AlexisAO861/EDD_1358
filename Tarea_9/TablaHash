@@ -1,0 +1,69 @@
+
+package Tareanueve;
+
+import java.util.LinkedList;
+
+public class TablaHash<K, T> {
+
+    private LinkedList<Elemento<K, T>>[] datos; // Arreglo de listas ligadas
+
+    public TablaHash(int table_size) {//Constructor.
+        datos = new LinkedList[table_size];
+        for (int i = 0; i < datos.length; i++) {
+            datos[i] = new LinkedList<>();
+        }
+    }
+    
+    public T valueOf(K key) {
+        int index = Math.abs(key.hashCode()) % datos.length;
+        for (Elemento<K, T> elemento : datos[index]) {
+            if (elemento.llave.equals(key)) {
+                return elemento.valor;
+            }
+        }
+        return null;
+    }
+    
+    public int add(K key, T valor) {
+        if (valor == null) {
+            throw new NullPointerException("No se pueden guardar valores nulos");
+        }
+        int index = Math.abs(key.hashCode()) % datos.length;
+        datos[index].addLast(new Elemento(key, valor));
+        return index;
+    }  
+    
+    private class Elemento<K, T> {
+
+        K llave;
+        T valor;
+
+        public Elemento(K llave, T valor) {
+            this.llave = llave;
+            this.valor = valor;
+        }
+
+        @Override
+        public String toString() {
+            return llave + ": " + valor;
+        }
+    }
+
+    public void remove(K key) {
+        int index = Math.abs(key.hashCode()) % datos.length;
+        for (int i = 0; i < datos[index].size(); i++) {
+            if (datos[index].get(i).llave.equals(key)) {
+                datos[index].remove(i);
+                break;
+            }
+        }
+    }
+    @Override
+    public String toString() {
+        String estado = "";
+        for (LinkedList item : datos) {
+            estado += item + "\n";
+        }
+        return estado;
+    }
+}
