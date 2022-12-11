@@ -1,0 +1,45 @@
+package Proyecto;
+
+import java.util.Stack;
+
+public class StackMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Stack<String> animales = new Stack<String>();
+		// Se agregan elementos a la pila
+		
+		animales.push("Gato");
+		animales.push("Iguana");
+		animales.push("Pato");
+		animales.push("Caballo");
+		animales.push("Gallina");
+		System.out.println(animales);
+		System.out.println("---------------------------------");
+		
+		// Eliminar el ultimo elemento añadido a la pila con el 
+
+		animales.pop();
+		System.out.println(animales);
+		System.out.println("---------------------------------");
+		
+		
+		 //Se muestra el ultimo elemento de la lista
+
+		System.out.println("El ultimo elemento en la pila es: " + animales.peek());
+		System.out.println("---------------------------------");
+		
+		//Se muestra el tamaño actual de la pila
+		
+		System.out.println("El tamaño de la pila es de " + animales.size() + " elementos");
+		System.out.println("---------------------------------");
+		
+		//Se eliminan todos los elementos existentes dentro de la pila
+
+		animales.clear();
+		System.out.println("Pila despues del metodo clear");
+		System.out.println(animales);
+		
+	}
+
+}
