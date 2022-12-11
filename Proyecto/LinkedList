@@ -1,0 +1,58 @@
+package Proyecto;
+
+import java.util.*;
+public class LinkedListMain {
+     public static void main(String args[]) {
+ 
+         // Declaración Linked List  
+         LinkedList<String> ModeloC = new LinkedList<String>();
+ 
+         //add(String Element) agrega un elemento en la lista
+         ModeloC.add("Auto Union");
+         ModeloC.add("Cadillac");
+         ModeloC.add("Ford Vairogs");
+         ModeloC.add("Nissan");
+         ModeloC.add("Monteverdi");
+ 
+         //Despliega el contenido  
+         System.out.println("--------------------Despliega el contenido------------------------");
+         System.out.println("Estacionamiento: " +ModeloC);
+ 
+         //Agregar al prinicipio y final un Elemento
+         ModeloC.addFirst("Primer modelo");
+         ModeloC.addLast("Último modelo");
+         System.out.println("\n--------------------Agregar al prinicipio y final un Elemento------------------------");
+         System.out.println("Despues de agregar elementos: " +ModeloC);
+          
+         // despliega el tamaño de la lista 
+         System.out.println("\n--------------------despliega el tamaño de la lista ------------------------");
+         System.out.println("Tamaño: " + ModeloC.size() );
+         
+         // Comprueba si hay un elemento en la lista 
+         System.out.println("\n--------------------Comprueba si hay un elemento en la lista  ------------------------");
+         if (ModeloC.contains("Nissan"))
+             System.out.println("El Coche a está en la linkedlist");
+         else
+             System.out.println("El Coche a no existe en la linkedlist");
+ 
+         //Obtención y recuperacion de elementos
+         Object f = ModeloC.get(0);
+         System.out.println("\n--------------------Obtención y recuperacion de elementos ------------------------");
+         System.out.println("Primer elemento: " +f);
+         ModeloC.set(0, "Cambiar el primer elemento");
+         Object f2 = ModeloC.get(0);
+         System.out.println("Primer elemento despues de actualiza por el método  set: " + f2);
+ 
+         //Borrar el primer y último elemento
+         ModeloC.removeFirst();
+         ModeloC.removeLast();
+         System.out.println("\n--------------------Borrar el primer y último elemento ------------------------");
+         System.out.println("Despues de borrar el primer y último elemento: " +ModeloC);
+ 
+         // Agregar en un posición y eliminar por posición
+         ModeloC.add(0, "Nuevo elemento");
+         ModeloC.remove(3);
+         System.out.println("\n--------------------Agregar en un posición y eliminar por posición ------------------------");
+         System.out.println("Final del contenido: " +ModeloC); 
+     }
+}
